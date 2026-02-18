@@ -4,13 +4,13 @@ import { RxStarFilled } from 'react-icons/rx';
 
 const Marquee = () => {
     const services = [
-        "Event Photography",
-        "Commercial Photography",
-        "Product Photography",
+        "Portrait Photography",
         "Wedding Photography",
         "Landscape Photography",
-        "Branding Photography",
-        "Portrait Photography"
+        "Street Photography",
+        "Editorial Photography",
+        "Commercial Photography",
+        "Event Photography"
     ];
 
     return (

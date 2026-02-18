@@ -4,26 +4,26 @@ import { FaStar, FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 const reviews = [
     {
         id: 1,
-        name: "Emily Johnson",
-        location: "USA, California",
+        name: "Ahmed Khan",
+        location: "Lahore, Pakistan",
         rating: 5,
-        review: "Luke's photography doesn't just capture moments; it captures emotions. His work is simply mesmerizing.",
+        review: "Muhtessam's photography doesn't just capture moments; it captures emotions. His work on our brand campaign was simply mesmerizing.",
         socials: ['facebook', 'twitter', 'linkedin']
     },
     {
         id: 2,
-        name: "John Smith",
-        location: "USA, California",
+        name: "Sara Ali",
+        location: "Islamabad, Pakistan",
         rating: 5,
-        review: "Luke has an incredible talent for making every event feel effortless, and the results speak for themselves.",
+        review: "Muhtessam has an incredible talent for making every event feel effortless, and the results speak for themselves. Truly world-class work.",
         socials: ['facebook', 'twitter', 'linkedin']
     },
     {
         id: 3,
-        name: "Samantha Davis",
-        location: "USA, California",
+        name: "Usman Raza",
+        location: "Karachi, Pakistan",
         rating: 5,
-        review: "I was blown away by Luke's ability to capture the essence of our wedding day. His photographs are our cherished memories.",
+        review: "I was blown away by Muhtessam's ability to capture the essence of our wedding day. His photographs are our most cherished memories.",
         socials: ['facebook', 'twitter', 'linkedin']
     }
 ];
@@ -39,8 +39,8 @@ const Testimonials = () => {
                             What My Clients Say
                         </h2>
                         <div className="mt-4">
-                            <p className="text-sm text-gray-400">Total Reviews</p>
-                            <p className="text-2xl font-bold text-white">323</p>
+                            <p className="text-sm text-gray-400">Happy Clients</p>
+                            <p className="text-2xl font-bold text-white">150+</p>
                         </div>
                     </div>
                     <div className="flex gap-4">

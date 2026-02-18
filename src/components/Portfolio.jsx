@@ -4,27 +4,51 @@ import { BsArrowUpRight } from 'react-icons/bs';
 const projects = [
     {
         id: 1,
-        title: "Faces of Resilience",
+        title: "Golden Hour Portraits",
         category: "Portrait",
-        date: "March 2022",
+        date: "November 2025",
         image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1000&auto=format&fit=crop",
         size: "large"
     },
     {
         id: 2,
-        title: "A Wedding Tale",
-        category: "Wedding",
-        date: "January 2023",
-        image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop",
+        title: "Urban Geometry",
+        category: "Street",
+        date: "September 2025",
+        image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1000&auto=format&fit=crop",
         size: "small"
     },
     {
         id: 3,
-        title: "Product Elegance",
+        title: "Mountain Serenity",
+        category: "Landscape",
+        date: "July 2025",
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop",
+        size: "small"
+    },
+    {
+        id: 4,
+        title: "A Wedding Story",
+        category: "Wedding",
+        date: "January 2026",
+        image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop",
+        size: "small"
+    },
+    {
+        id: 5,
+        title: "The Brand Identity",
         category: "Commercial",
-        date: "January 2023",
+        date: "December 2025",
         image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
         size: "small"
+    },
+    {
+        id: 6,
+        title: "Ethereal Mood",
+        category: "Editorial",
+        date: "October 2025",
+        image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=1000&auto=format&fit=crop",
+        size: "large"
     }
 ];
 
@@ -53,7 +77,7 @@ const Portfolio = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {projects.map((project, index) => (
+                    {projects.map((project) => (
                         <div
                             key={project.id}
                             className={`group relative overflow-hidden rounded-2xl ${project.size === 'large' ? 'md:col-span-1 md:row-span-2 aspect-[3/4]' : 'md:col-span-1 aspect-square'}`}
@@ -68,6 +92,7 @@ const Portfolio = () => {
                             <div className="absolute bottom-6 left-6 right-6">
                                 <div className="flex justify-between items-end">
                                     <div>
+                                        <span className="text-xs text-accent uppercase tracking-wider font-medium">{project.category}</span>
                                         <h3 className="text-lg font-medium text-white mb-1">{project.title}</h3>
                                         <p className="text-sm text-gray-400">{project.date}</p>
                                     </div>
@@ -78,7 +103,6 @@ const Portfolio = () => {
                             </div>
                         </div>
                     ))}
-                    {/* Add a placeholder or duplicate to fill grid if needed */}
                 </div>
             </div>
         </section>

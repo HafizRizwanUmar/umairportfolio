@@ -13,10 +13,10 @@ const Hero = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-gray-400 text-sm md:text-base font-medium tracking-widest mb-4 uppercase">
-                            Stunning Photography By
+                            Capturing Moments That Last Forever
                         </h3>
                         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-[0.9]">
-                            LUKE <br /> DAVIES
+                            MUHTESSAM <br /> UMAIR
                         </h1>
                     </motion.div>
 

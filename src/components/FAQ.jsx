@@ -30,38 +30,38 @@ const FAQ = () => {
     const faqs = [
         {
             question: "What type of photography do you specialize in?",
-            answer: "I specialize in Portrait, Landscape, Event, and Commercial photography, capturing moments that tell unique stories from various perspectives."
+            answer: "I specialize in Portrait, Landscape, Street, Wedding, and Commercial photography. Each genre allows me to tell stories from a different perspective, and I love the creative challenge that comes with each."
         },
         {
-            question: "How can I book a photography session with you?",
-            answer: "You can book a session by contacting me through the contact form below or emailing me directly at lukedavies@gmail.com."
+            question: "How can I book a photography session?",
+            answer: "You can book a session by reaching out through the contact form below, DMing me on Instagram, or emailing me directly at muhtessamumair@gmail.com. I'll get back to you within 24 hours."
         },
         {
-            question: "What equipment do you use for your photography?",
-            answer: "I use high-end professional Canon and Sony mirrorless cameras with a wide range of prime and zoom lenses to ensure the best quality."
+            question: "What equipment do you use?",
+            answer: "I use professional-grade mirrorless cameras paired with a curated selection of prime and zoom lenses. My gear is chosen for its ability to deliver exceptional sharpness, color accuracy, and low-light performance."
         },
         {
             question: "Can I request a specific location for a shoot?",
-            answer: "Absolutely! I am open to travel and shooting in locations that are meaningful to you or provide the perfect backdrop for your vision."
+            answer: "Absolutely! I'm open to shooting at locations that are meaningful to you or provide the perfect backdrop for your vision. I also love scouting new and unique locations."
         }
     ];
 
     const faqsRight = [
         {
-            question: "What is your editing process like?",
-            answer: "My editing process focuses on enhancing the natural beauty of the image while maintaining a consistent and professional mood."
+            question: "What is your editing style?",
+            answer: "My editing style leans towards a cinematic, moody aesthetic with rich tones and deep contrast. I focus on enhancing the natural beauty of each image while maintaining a consistent and professional feel across the entire set."
         },
         {
             question: "Are digital files included in your packages?",
-            answer: "Yes, high-resolution digital files are included in most of my photography packages."
+            answer: "Yes, all of my packages include high-resolution, professionally edited digital files that you can use for prints, social media, and personal archives."
         },
         {
             question: "Do you offer prints of your photographs?",
-            answer: "Yes, prints are available for purchase. Explore the specific prints section for more details on sizes and pricing."
+            answer: "Yes, gallery-quality prints are available for purchase in various sizes and finishes. Feel free to reach out for pricing and options."
         },
         {
             question: "How long does it take to receive the edited photos?",
-            answer: "Typically, I deliver the final edited photos within 2-3 weeks after the session, depending on the volume of work."
+            answer: "Typically, I deliver the final edited gallery within 2-3 weeks after the session. For weddings and large events, it may take up to 4 weeks."
         }
     ];
 

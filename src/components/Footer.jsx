@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,7 +14,7 @@ const Footer = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Parallax effect for "LUKE" text
+            // Parallax effect for "MUHTESSAM" text
             gsap.fromTo(textRef.current,
                 { y: -50 },
                 {
@@ -100,7 +100,7 @@ const Footer = () => {
                 {/* Huge Text Background */}
                 <div className="relative border-b border-white/10 pb-12 md:pb-20 mb-12 md:mb-20">
                     <h1 ref={textRef} className="text-[15vw] md:text-[12vw] font-bold text-white/5 leading-none text-center select-none pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap z-0">
-                        LUKE
+                        MUHTESSAM
                     </h1>
 
                     <div className="flex flex-col md:flex-row justify-between items-end relative z-10 px-2 md:px-4">
@@ -128,30 +128,28 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div ref={addToNavRefs}>
-                        <h4 className="text-gray-500 uppercase text-sm mb-4 md:mb-6 font-semibold">Clients</h4>
+                        <h4 className="text-gray-500 uppercase text-sm mb-4 md:mb-6 font-semibold">Specialties</h4>
                         <ul className="space-y-3 md:space-y-4">
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Klovesto</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Nukeway</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Cloven's</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">MenVol</a></li>
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Portraits</a></li>
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Weddings</a></li>
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Landscapes</a></li>
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Street</a></li>
                         </ul>
                     </div>
                     <div ref={addToNavRefs}>
                         <h4 className="text-gray-500 uppercase text-sm mb-4 md:mb-6 font-semibold">Portfolio</h4>
                         <ul className="space-y-3 md:space-y-4">
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Editorial</a></li>
+                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Commercial</a></li>
                             <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Events</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Portrait</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Branding</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Commerciale</a></li>
-                            <li><a href="#portfolio" onClick={(e) => handleScroll(e, '#portfolio')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Wedding</a></li>
                         </ul>
                     </div>
                     <div ref={addToNavRefs}>
                         <h4 className="text-gray-500 uppercase text-sm mb-4 md:mb-6 font-semibold">Services</h4>
                         <ul className="space-y-3 md:space-y-4">
-                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Portraits</a></li>
-                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Events</a></li>
-                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Commercial</a></li>
+                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Photo Shoots</a></li>
+                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Photo Editing</a></li>
+                            <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="text-white hover:text-accent transition uppercase text-xs md:text-sm tracking-wide">Print Sales</a></li>
                         </ul>
                     </div>
                 </div>
@@ -159,17 +157,17 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center text-gray-500 text-sm">
                     <div className="flex flex-col md:flex-row items-center gap-6 mt-8 md:mt-0">
-                        <span className="md:hidden">© 2024 Luke Davies Photography.</span>
+                        <span className="md:hidden">© 2026 Muhtessam Umair Photography.</span>
                         <div className="flex gap-6">
                             <a href="#" className="hover:text-white transition">Terms & Conditions</a>
                             <a href="#" className="hover:text-white transition">Privacy Policy</a>
                         </div>
-                        <span className="hidden md:block">© 2024 Luke Davies Photography. All rights reserved.</span>
+                        <span className="hidden md:block">© 2026 Minderfly.com . All rights reserved.</span>
                     </div>
 
                     <div ref={socialRef} className="flex gap-4">
+                        <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 hover:text-white transition cursor-pointer text-white"><FaInstagram /></div>
                         <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 hover:text-white transition cursor-pointer text-white"><FaFacebookF /></div>
-                        <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 hover:text-white transition cursor-pointer text-white"><FaTwitter /></div>
                         <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 hover:text-white transition cursor-pointer text-white"><FaLinkedinIn /></div>
                     </div>
                 </div>
