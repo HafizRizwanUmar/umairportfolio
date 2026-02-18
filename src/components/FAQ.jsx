@@ -1,24 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const FAQItem = ({ question, answer }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const FAQItem = ({ question, answer, index }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const itemRef = useRef(null);
+    const answerRef = useRef(null);
+
+    useEffect(() => {
+        if (!itemRef.current) return;
+        gsap.fromTo(itemRef.current,
+            { y: 40, opacity: 0 },
+            {
+                y: 0, opacity: 1,
+                duration: 0.7,
+                delay: index * 0.08,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: itemRef.current,
+                    start: 'top 92%',
+                }
+            }
+        );
+    }, [index]);
+
+    useEffect(() => {
+        if (!answerRef.current) return;
+        if (isOpen) {
+            gsap.fromTo(answerRef.current,
+                { height: 0, opacity: 0 },
+                { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' }
+            );
+        } else {
+            gsap.to(answerRef.current,
+                { height: 0, opacity: 0, duration: 0.3, ease: 'power2.in' }
+            );
+        }
+    }, [isOpen]);
 
     return (
-        <div className="border-b border-white/10 py-6">
+        <div ref={itemRef} className="border-b border-white/10 py-6">
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex justify-between items-center text-left focus:outline-none group"
             >
                 <span className="text-white font-medium text-lg md:text-xl group-hover:text-accent transition uppercase">{question}</span>
-                <span className="text-white border border-white/10 rounded-full p-2 group-hover:bg-accent group-hover:border-accent transition">
-                    {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                <span className={`text-white border border-white/10 rounded-full p-2 transition duration-300 ${isOpen ? 'bg-accent border-accent rotate-180' : 'group-hover:bg-accent group-hover:border-accent'}`}>
+                    <IoIosArrowDown />
                 </span>
             </button>
-            <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
-            >
-                <p className="text-gray-400 leading-relaxed">
+            <div ref={answerRef} className="overflow-hidden" style={{ height: 0, opacity: 0 }}>
+                <p className="text-gray-400 leading-relaxed pt-4">
                     {answer}
                 </p>
             </div>
@@ -27,6 +62,27 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQ = () => {
+    const sectionRef = useRef(null);
+    const headingRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(headingRef.current.querySelectorAll('.anim-el'),
+                { y: 60, opacity: 0, skewY: 3 },
+                {
+                    y: 0, opacity: 1, skewY: 0,
+                    duration: 1, stagger: 0.15, ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: headingRef.current,
+                        start: 'top 85%',
+                    }
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     const faqs = [
         {
             question: "What type of photography do you specialize in?",
@@ -66,11 +122,11 @@ const FAQ = () => {
     ];
 
     return (
-        <section id="services" className="py-20 px-6 bg-dark">
+        <section ref={sectionRef} id="services" className="py-20 px-6 bg-dark">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-12">
-                    <span className="text-gray-400 text-sm uppercase tracking-widest">FAQ's</span>
-                    <h2 className="text-3xl md:text-5xl font-semibold text-white mt-2 uppercase">
+                <div ref={headingRef} className="mb-12">
+                    <span className="anim-el text-gray-400 text-sm uppercase tracking-widest block">FAQ's</span>
+                    <h2 className="anim-el text-3xl md:text-5xl font-semibold text-white mt-2 uppercase">
                         Frequently Asked Questions
                     </h2>
                 </div>
@@ -78,12 +134,12 @@ const FAQ = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
                     <div>
                         {faqs.map((faq, index) => (
-                            <FAQItem key={index} {...faq} />
+                            <FAQItem key={index} index={index} {...faq} />
                         ))}
                     </div>
                     <div>
                         {faqsRight.map((faq, index) => (
-                            <FAQItem key={index} {...faq} />
+                            <FAQItem key={index} index={index + 4} {...faq} />
                         ))}
                     </div>
                 </div>
