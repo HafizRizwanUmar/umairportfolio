@@ -1,60 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import projects from '../data/projects';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const projects = [
-    {
-        id: 1,
-        title: "Golden Hour Portraits",
-        category: "Portrait",
-        date: "November 2025",
-        image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1000&auto=format&fit=crop",
-        size: "large"
-    },
-    {
-        id: 2,
-        title: "Urban Geometry",
-        category: "Street",
-        date: "September 2025",
-        image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1000&auto=format&fit=crop",
-        size: "small"
-    },
-    {
-        id: 3,
-        title: "Mountain Serenity",
-        category: "Landscape",
-        date: "July 2025",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop",
-        size: "small"
-    },
-    {
-        id: 4,
-        title: "A Wedding Story",
-        category: "Wedding",
-        date: "January 2026",
-        image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop",
-        size: "small"
-    },
-    {
-        id: 5,
-        title: "The Brand Identity",
-        category: "Commercial",
-        date: "December 2025",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
-        size: "small"
-    },
-    {
-        id: 6,
-        title: "Ethereal Mood",
-        category: "Editorial",
-        date: "October 2025",
-        image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=1000&auto=format&fit=crop",
-        size: "large"
-    }
-];
 
 const Portfolio = () => {
     const sectionRef = useRef(null);
@@ -158,11 +109,21 @@ const Portfolio = () => {
                                         <h3 className="text-lg font-medium text-white mb-1">{project.title}</h3>
                                         <p className="text-sm text-gray-400">{project.date}</p>
                                     </div>
-                                    <a href="#" className="flex items-center gap-2 text-sm text-gray-300 hover:text-accent uppercase tracking-wider transition duration-300">
+                                    <Link
+                                        to={`/project/${project.slug}`}
+                                        className="flex items-center gap-2 text-sm text-gray-300 hover:text-accent uppercase tracking-wider transition duration-300"
+                                    >
                                         View Project <BsArrowUpRight />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
+
+                            {/* Full card clickable overlay */}
+                            <Link
+                                to={`/project/${project.slug}`}
+                                className="absolute inset-0 z-10"
+                                aria-label={`View ${project.title}`}
+                            />
                         </div>
                     ))}
                 </div>
